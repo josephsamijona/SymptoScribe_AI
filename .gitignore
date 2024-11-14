@@ -1,0 +1,376 @@
+# Frontend (.gitignore)
+```
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+yarn.lock
+package-lock.json
+
+# Testing
+/coverage
+/cypress/videos
+/cypress/screenshots
+.nyc_output
+
+# Next.js
+/.next/
+/out/
+/build
+.next
+next-env.d.ts
+
+# Production
+/build
+/dist
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*.local
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+debug.log*
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# IDE - IntelliJ
+.idea/
+*.iml
+*.iws
+*.ipr
+.idea_modules/
+
+# Misc
+.DS_Store
+*.pem
+Thumbs.db
+.vercel
+*.tsbuildinfo
+
+# PWA files
+public/sw.js
+public/workbox-*.js
+public/worker-*.js
+public/sw.js.map
+public/workbox-*.js.map
+public/worker-*.js.map
+
+# Storybook
+storybook-static
+
+# Cache
+.eslintcache
+.stylelintcache
+
+# Temporary files
+*.swp
+*.swo
+*~
+
+# Local files
+TODO.md
+NOTES.md
+```
+
+# Backend (.gitignore)
+```
+# Python
+*.py[cod]
+*$py.class
+*.so
+.Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.env/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Django
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media/
+static/
+staticfiles/
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+*.env
+
+# Database
+*.sqlite3
+*.db
+*.rdb
+postgres-data/
+
+# Development
+.coverage
+.tox/
+.pytest_cache/
+htmlcov/
+.coverage.*
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# IDE - PyCharm
+.idea/
+*.iml
+*.iws
+.idea_modules/
+*.ipr
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Unit test / coverage reports
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+*.py,cover
+.pytest_cache/
+nosetests.xml
+coverage.xml
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff
+instance/
+.webassets-cache
+
+# Scrapy stuff
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# Backup files
+*.bak
+*.swp
+*~
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+*.egg
+MANIFEST
+
+# Local development configuration
+docker-compose.override.yml
+
+# Dumps
+*.dump
+*.sql
+
+# System Files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Secrets
+secrets.yaml
+secrets.json
+*.pem
+*.key
+*.crt
+
+# AWS
+.aws/
+
+# Google Cloud
+*.json.key
+google-credentials.json
+
+# Media files
+media/
+uploads/
+/assets
+
+# Cache
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+
+# Temporary files
+tmp/
+temp/
+```
+
+# Git global configuration recommandée (.gitattributes)
+```
+# Auto detect text files and perform LF normalization
+* text=auto eol=lf
+
+# Python files
+*.py text diff=python
+*.pyc binary
+*.pyo binary
+*.pyd binary
+
+# JavaScript files
+*.js text
+*.jsx text
+*.ts text
+*.tsx text
+
+# Documentation
+*.md text diff=markdown
+*.mdx text diff=markdown
+
+# Docker
+*.dockerignore text
+Dockerfile text
+
+# Config files
+*.json text
+*.yaml text
+*.yml text
+*.toml text
+*.ini text
+*.conf text
+
+# Database
+*.sql text
+*.sqlite binary
+
+# Graphics
+*.png binary
+*.jpg binary
+*.gif binary
+*.ico binary
+*.svg text
+
+# Fonts
+*.ttf binary
+*.eot binary
+*.woff binary
+*.woff2 binary
+
+# Scripts
+*.sh text eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Lock files
+package-lock.json binary
+yarn.lock binary
+```
+
+Points importants sur cette configuration :
+
+1. Frontend :
+- Ignore les dépendances Node.js
+- Protège les variables d'environnement
+- Gère les fichiers de build Next.js
+- Exclut les fichiers de debug et logs
+- Gère les fichiers spécifiques PWA
+- Exclut les fichiers temporaires
+
+2. Backend :
+- Ignore l'environnement virtuel Python
+- Protège les fichiers de base de données
+- Exclut les fichiers de cache Python
+- Gère les fichiers média et statiques
+- Protège les fichiers de configuration sensibles
+- Gère les fichiers de logs et dumps
+
+3. Configuration Git globale :
+- Normalisation des fins de ligne
+- Gestion spécifique par type de fichier
+- Configuration des fichiers binaires et texte
+
+Pour utiliser ces configurations :
+
+1. À la racine du projet :
+```bash
+# Copier les fichiers .gitignore dans leurs dossiers respectifs
+cp frontend-gitignore.txt frontend/.gitignore
+cp backend-gitignore.txt backend/.gitignore
+cp gitattributes.txt .gitattributes
+
+# Initialiser Git
+git init
+git add .
+git commit -m "Initial commit"
+```
+
+Cette configuration aide à :
+- Maintenir un dépôt propre
+- Protéger les informations sensibles
+- Éviter les conflits de versioning
+- Optimiser la gestion des fichiers binaires/texte
+
+Voulez-vous que j'ajoute d'autres configurations spécifiques ou que nous passions à l'étape suivante ?

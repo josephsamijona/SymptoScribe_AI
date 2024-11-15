@@ -1,0 +1,7 @@
+.bar {
+    width: 4px;
+    background-image: linear-gradient(to top, var(--color-start), var(--color-end));
+    height: 20px;
+    transition: all 100ms;
+    border-radius: 9999px;
+  }
